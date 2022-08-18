@@ -1,0 +1,13 @@
+{
+    "name": "mudassirmirza/robust",
+    "type": "project",
+    "license": "PAID",
+    "authors": [
+        {
+            "name": "Mudassir Mirza",
+            "email": "mudassir@b2bproductions.com.pk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
