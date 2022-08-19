@@ -49,12 +49,12 @@ session_start();
 </head>
 
 <body class="multi-step-sign-up">
-    <form id="msform">
+    <form id="msform" name="signUp" method="POST" action="">
         <!-- progressbar -->
         <ul id="progressbar">
             <li class="active">Personal Details</li>
-            <li>Social Profiles</li>
-            <li>Personal Details</li>
+            <li>Medical Details</li>
+            <li>Profile Details</li>
         </ul>
         <!-- fieldsets -->
         <fieldset>
@@ -76,41 +76,32 @@ session_start();
                 <input type="number" class="form-control" name="age" min="0" max="150" placeholder="Age" />
             </div>
             <div class="input-group">
-                <input type="password" class="form-control" name="cpass" placeholder="Confirm Password" />
+                <textarea class="form-control" name="address"  placeholder="Residentail Address"></textarea>
             </div>
             <button type="button" name="next" class="btn btn-primary next" value="Next">Next</button>
         </fieldset>
         <fieldset>
         <img class="logo" src="assets/images/opd-logo-green-transparent.png" alt="logo.png">
-            <h2 class="fs-title">Social Profiles</h2>
-            <h3 class="fs-subtitle">Little bit about your presence on social media</h3>
+            <h2 class="fs-title">Medical Details</h2>
+            <h3 class="fs-subtitle">Little bit about your medical history.</h3>
             <div class="input-group">
-                <input type="text" class="form-control" name="twitter" placeholder="Twitter" />
-            </div>
-            <div class="input-group">
-                <input type="text" class="form-control" name="facebook" placeholder="Facebook" />
-            </div>
-            <div class="input-group">
-                <input type="text" class="form-control" name="gplus" placeholder="Google Plus" />
+                <textarea class="form-control" name="medicalHistory"  placeholder="Any previous Medical History?"></textarea>
             </div>
             <button type="button" name="previous" class="btn btn-inverse btn-outline-inverse previous" value="Previous">Previous</button>
             <button type="button" name="next" class="btn btn-primary next" value="Next">Next</button>
         </fieldset>
         <fieldset>
         <img class="logo" src="assets/images/opd-logo-green-transparent.png" alt="logo.png">
-            <h2 class="fs-title">Personal Details</h2>
-            <h3 class="fs-subtitle">And something about yourself!</h3>
+            <h2 class="fs-title">Profile Details</h2>
+            <h3 class="fs-subtitle">And something about your profile!</h3>
             <div class="input-group">
-                <input type="text" class="form-control" name="fname" placeholder="First Name" />
+                <input type="text" class="form-control" name="username" placeholder="Username" />
             </div>
             <div class="input-group">
-                <input type="text" class="form-control" name="lname" placeholder="Last Name" />
+                <input type="email" class="form-control" name="Email" placeholder="Email" />
             </div>
             <div class="input-group">
-                <input type="text" class="form-control" name="phone" placeholder="Phone" />
-            </div>
-            <div class="input-group">
-                <textarea name="address" class="form-control" placeholder="Address"></textarea>
+                <input type="text" class="form-control" name="contactNumber" placeholder="Contact #" />
             </div>
             <button type="button" name="previous" class="btn btn-inverse btn-outline-inverse previous" value="Previous">Previous</button>
             <button type="button" name="next" class="btn btn-primary" value="submit">Submit</button>

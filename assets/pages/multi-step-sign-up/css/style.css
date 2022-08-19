@@ -115,7 +115,7 @@ img.logo {
 	position: relative;
 }
 #progressbar li.active {
-	color: #e74c3c;
+	color: #1abc9c;
 }
 #progressbar li:before {
 	content: counter(step);
@@ -149,6 +149,6 @@ img.logo {
 /* Marking active/completed steps green */
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before,  #progressbar li.active:after{
-	background: #e74c3c;
+	background: #1abc9c;
 	color: white;
 }

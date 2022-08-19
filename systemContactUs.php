@@ -1,6 +1,6 @@
 <!--
-    Package Name: Robust
-    Author: Mudassir Mirza - B2B Productions
+    Package Name: OPD
+    Author: Mudassir Mirza
 
 -->
 <?php 
@@ -23,8 +23,8 @@ session_start();
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-      <meta name="description" content="IRY - cPanel">
-      <meta name="author" content="B2B Productions">
+      <meta name="description" content="OPD">
+      <meta name="author" content="Mudassir Mirza">
     <!-- Favicon icon -->
     
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
@@ -68,7 +68,7 @@ session_start();
                             <div class="auth-box">
                                 <div class="row m-b-20">
                                     <div class="col-md-12">
-                                        <h3 class="text-left txt-primary">Sign In</h3>
+                                        <h3 class="text-left txt-primary">Contact Us</h3>
                                     </div>
                                 </div>
                                 <?php
@@ -92,24 +92,18 @@ session_start();
                                      <input type="text" name="username" id="username" class="form-control" placeholder="Username" autocomplete="off" required>
                                     <span class="messages"></span>
                                 </div>
-                                <div class="input-group">
-                                    <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
-                                    <span class="messages"></span>
-                                </div>
                                 <div class="row m-t-25 text-left">
                                     <div class="col-sm-7 col-xs-12">
                                         
                                     </div>
-                                    <div class="col-sm-5 col-xs-12 forgot-phone text-right">
-                                        <a href="systemResetPassword" class="text-right f-w-600 text-inverse"> Forgot Password?</a>
-                                    </div>
+                                    
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <button type="submit" name="login" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign in</button>
+                                        <button type="submit" name="login" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Submit</button>
                                     </div>
                                     <div class="col-md-12">
-                                            <p class="text-inverse m-t-25 text-center">Don't have an account? <a href="systemSignUp"> Register </a> here for free!</p>
+                                            <p class="text-inverse m-t-25 text-center">Return to <a href="systemSignIn"> Sign In </a></p>
                                     </div>
                                 </div>
                                 <hr/>
