@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/iry-cpanel/core/modal/initialize.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/opd/core/modal/initialize.php');
 
 function renderView($userID, $accessLevel, $callBackURL){
     global $sessSalt;
@@ -13,7 +13,7 @@ function renderView($userID, $accessLevel, $callBackURL){
             if(isAdminValid($userID) === TRUE){
                 
                 //$sessID= session_id() . $sessSalt;
-                include "$rootAdrr/iry-cpanel/core/view/adminView/admin$callBackURL.inc.php";
+                include "$rootAdrr/opd/core/view/adminView/admin$callBackURL.inc.php";
 
             }else{
                 header("Location: $sandboxURL?error=ERR_ACCESS_DENIED");
@@ -31,7 +31,7 @@ function renderView($userID, $accessLevel, $callBackURL){
             if(isEmployeeValid($userID) === TRUE){
 
                 //$sessID= session_id() . $sessSalt;
-                include "$rootAdrr/iry-cpanel/core/view/employeeView/employee$callBackURL.php";
+                include "$rootAdrr/opd/core/view/employeeView/employee$callBackURL.php";
             }else{
                 header("Location: $sandboxURL?error=ERR_ACCESS_DENIED");
                 session_unset();

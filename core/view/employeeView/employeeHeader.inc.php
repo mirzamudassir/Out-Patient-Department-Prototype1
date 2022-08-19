@@ -1,9 +1,9 @@
 <?php 
 //calling necessary include files
-require_once($_SERVER['DOCUMENT_ROOT'] . '/robust/includes/global_info.inc.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/robust/core/modal/initialize.php');
-//require_once($_SERVER['DOCUMENT_ROOT'] . '/robust/core/view/adminView/adminModals.inc.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/robust/core/view/adminView/adminNav.inc.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/opd/includes/global_info.inc.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/opd/core/modal/initialize.php');
+//require_once($_SERVER['DOCUMENT_ROOT'] . '/opd/core/view/adminView/adminModals.inc.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/opd/core/view/adminView/adminNav.inc.php');
 
 //call this method in every private page to protect against unauthorized access
 before_every_protected_page();
@@ -18,7 +18,7 @@ error_reporting(E_ALL); // Error/Exception engine, always use E_ALL
 <html lang="en">
 
 <!--
-    Package Name: Robust
+    Package Name: opd
     Author: Mudassir Mirza
     Copyrights: B2B Productions (www.b2bproductions.com.pk)
 
@@ -36,8 +36,8 @@ error_reporting(E_ALL); // Error/Exception engine, always use E_ALL
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-      <meta name="description" content="Robust - B2B Productions">
-      <meta name="keywords" content="B2B Productions, Robust, Web App">
+      <meta name="description" content="opd - B2B Productions">
+      <meta name="keywords" content="B2B Productions, opd, Web App">
       <meta name="author" content="B2B Productions">
       <!-- Favicon icon -->
       <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">

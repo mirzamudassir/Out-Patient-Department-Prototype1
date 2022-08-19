@@ -40,11 +40,12 @@ class Patient{
         $prefix= "OPD";
         $salt= rand(100,999);
 
+        $year= date("y");
         $month= date("m");
         $day= date("d");
         $time= substr(time(), 7, 7);
 
-        $mrNumber= $day . $time . $salt;
+        $mrNumber= $year. $month . $day . $time . $salt;
 
         return $mrNumber;
     }

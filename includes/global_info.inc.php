@@ -7,6 +7,23 @@ $appTitle= "OPD ";
 $appHeading= $appTitle . $version;
 $developerName= "Mudassir Mirza";
 $copyrights= "Mudassir Mirza";
-$footer= "$currentYear © $copyrights $version"
+$footer= "$currentYear © $copyrights $version";
+
+ function getNotification(){
+    if(isset($_SESSION['notifStatus']) && $_SESSION['notifStatus'] != ''){
+      
+      
+                            ?>
+                          <script>  
+                          alert('Message Sent');
+                      </script>
+<?php
+
+unset($_SESSION['notifStatus']);
+
+  
+  }
+}
+
 
 ?>

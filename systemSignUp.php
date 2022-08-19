@@ -79,6 +79,7 @@ session_start();
                 <textarea class="form-control" name="address"  placeholder="Residentail Address"></textarea>
             </div>
             <button type="button" name="next" class="btn btn-primary next" value="Next">Next</button>
+            <p class="m-t-20">Already have an account? <a href="systemSignIn">Sign in</a></p>
         </fieldset>
         <fieldset>
         <img class="logo" src="assets/images/opd-logo-green-transparent.png" alt="logo.png">
@@ -89,6 +90,7 @@ session_start();
             </div>
             <button type="button" name="previous" class="btn btn-inverse btn-outline-inverse previous" value="Previous">Previous</button>
             <button type="button" name="next" class="btn btn-primary next" value="Next">Next</button>
+            <p class="m-t-20">Already have an account? <a href="systemSignIn">Sign in</a></p>
         </fieldset>
         <fieldset>
         <img class="logo" src="assets/images/opd-logo-green-transparent.png" alt="logo.png">

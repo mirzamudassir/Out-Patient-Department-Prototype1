@@ -23,7 +23,6 @@ require_once(PRIVATE_PATH . "/functions/brute_force_throttle_functions.php");
 require_once(APP_ROOT . "/controller/UserController.php");
 require_once(APP_ROOT . "/controller/postController.php");
 require_once(APP_ROOT . "/modal/Auth/Db.php");
-require_once(APP_ROOT . "/modal/Auth/WidgetDb.php");
 require_once(APP_ROOT . "/modal/Auth/configurations.inc.php");
 require_once(APP_ROOT . "/view/renderView.php");
 
@@ -32,10 +31,6 @@ session_start();
 //creating the instance of cpanel Database connection to be used throughout the Application.
 $instance= Db::getDbInstance();
 $link= $instance->openDbConnection();
-
-//creating the instance of widget Database connection to be used throughout the Application.
-$WidgetInstance= WidgetDb::getDbInstance();
-$WidgetLink= $WidgetInstance->openDbConnection();
 
 //check if the database connection is established without any errors. if there is error, redirect it to error page
 //otherwise establish the connection.

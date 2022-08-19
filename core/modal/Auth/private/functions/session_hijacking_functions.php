@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/iry-cpanel/core/modal/Auth/configurations.inc.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/opd/core/modal/Auth/configurations.inc.php');
 // Useful php.ini file settings:
 // session.cookie_lifetime = 0
 // session.cookie_secure = 1

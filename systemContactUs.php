@@ -5,7 +5,7 @@
 -->
 <?php 
 //get the file that includes the basic information about the application like application name, verison, header info, footer info,
-require_once($_SERVER['DOCUMENT_ROOT'] . '/iry-cpanel/includes/global_info.inc.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/opd/includes/global_info.inc.php');
 session_start(); 
 
 ?>
@@ -33,7 +33,7 @@ session_start();
     <!-- Required Fremwork -->
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- sweet alert framework -->
-    <link rel="stylesheet" type="text/css" href="bower_components/sweetalert/dist/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/sweetalert/dist/sweetalert2.css">
     <!-- animation nifty modal window effects css -->
     <link rel="stylesheet" type="text/css" href="assets/css/component.css">
     <!-- themify-icons line icon -->
@@ -60,10 +60,10 @@ session_start();
                 <div class="col-sm-12">
                     <!-- Authentication card start -->
                     <div class="login-card card-block auth-body">
-                        <form class="md-float-material" method="POST" action="core/modal/Auth/validate">
-                            <div class="text-center">
+                        <form id="contactUs" name="contactUs" class="md-float-material" method="POST" action="core/controller/postController?m=contactUs">
+                            <!-- <div class="text-center">
                                 <img src="assets/images/opd-logo-white-transparent.png" height="150px" width="180px">
-                            </div>
+                            </div> -->
                             
                             <div class="auth-box">
                                 <div class="row m-b-20">
@@ -72,35 +72,31 @@ session_start();
                                     </div>
                                 </div>
                                 <?php
-                            if(isset($_SESSION['message'])){
-                                $message= $_SESSION['message'];
-                            echo "
-                            <div class='alert alert-danger'>
-                                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                                        <i class='icofont icofont-close-line-circled'></i>
-                                        </button>
-                                        <strong>$message</strong>
-                                </div>
-                            ";
-                            //dispose off the session.
-                            session_unset();
-                            session_destroy();
-                            }
+                            echo getNotification();
                             ?>
                                 <hr/>
                                 <div class="input-group">
-                                     <input type="text" name="username" id="username" class="form-control" placeholder="Username" autocomplete="off" required>
+                                     <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" autocomplete="off" required>
                                     <span class="messages"></span>
                                 </div>
-                                <div class="row m-t-25 text-left">
-                                    <div class="col-sm-7 col-xs-12">
-                                        
-                                    </div>
-                                    
+                                <div class="form-group row">
+                                                <div class="col-sm-6">
+                                                    <input type="text" name="contactNumber" id="username" class="form-control" placeholder="Contact #">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <input type="text" name="email" id="username" class="form-control" placeholder="Email">
+                                                </div>
+                                </div>
+                                
+                                <div class="input-group">
+                                     <input type="text" name="messageTitle" id="messageTitle" class="form-control" placeholder="Message Title" autocomplete="off" required>
+                                </div>
+                                <div class="input-group">
+                                    <textarea class="form-control" name="messageBody"  placeholder="Message Body" rows="4" cols="50"></textarea>
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <button type="submit" name="login" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Submit</button>
+                                        <button type="submit" name="contactUs" id="contactUs" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Send</button>
                                     </div>
                                     <div class="col-md-12">
                                             <p class="text-inverse m-t-25 text-center">Return to <a href="systemSignIn"> Sign In </a></p>
@@ -176,7 +172,7 @@ session_start();
     <script type="text/javascript" src="bower_components/modernizr/modernizr.js"></script>
     <script type="text/javascript" src="bower_components/modernizr/feature-detects/css-scrollbars.js"></script>
     <!-- sweet alert js -->
-    <script type="text/javascript" src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="bower_components/sweetalert/dist/sweetalert2.min.js"></script>
     <script type="text/javascript" src="assets/js/modal.js"></script>
     <!-- sweet alert modal.js intialize js -->
     <!-- modalEffects js nifty modal window effects -->
@@ -190,5 +186,44 @@ session_start();
     <!-- Custom js -->
     <script type="text/javascript" src="assets/js/script.js"></script>
     <script type="text/javascript" src="assets/js/blockUI.js"></script>
+    <script>
+        /* $(document).on('submit', '#contactUs', function(e){
+
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: 'core/controller/postController?m=contactUs',
+                data: $('form').serialize(),
+                success: function(response){
+                    let message= JSON.parse(response);
+                    notify(message[0] ':' message[1], 'inverse');
+                }
+            });
+        }); */
+ 
+        function notify(message, type){
+        $.growl({
+            message: message
+        },{
+            type: type,
+            allow_dismiss: true,
+            label: 'Cancel',
+            className: 'btn-xs btn-inverse',
+            placement: {
+                from: 'top',
+                align: 'center'
+            },
+            delay: 4000,
+            animate: {
+                    enter: 'animated fadeInDown',
+                    exit: 'animated fadeOutUp'
+            },
+            offset: {
+                x: 30,
+                y: 30
+            }
+        });
+    };
+    </script>
 </body>
 </html>

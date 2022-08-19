@@ -109,7 +109,8 @@ session_start();
                                         <button type="submit" name="login" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign in</button>
                                     </div>
                                     <div class="col-md-12">
-                                            <p class="text-inverse m-t-25 text-center">Don't have an account? <a href="systemSignUp"> Register </a> here for free!</p>
+                                            <p class="text-inverse m-t-25 text-center">Don't have an account? <a href="systemSignUp"> Sign Up </a> here for free!<br>
+                                            Need any help? <a href="systemContactUs">Contact Us</a></p>
                                     </div>
                                 </div>
                                 <hr/>

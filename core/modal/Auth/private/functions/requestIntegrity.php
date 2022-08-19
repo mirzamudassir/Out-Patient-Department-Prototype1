@@ -6,7 +6,7 @@
  */
 ob_start();
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/iry-cpanel/core/modal/initialize.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/opd/core/modal/initialize.php');
 
 function isAdminValid($userID){
     global $link;

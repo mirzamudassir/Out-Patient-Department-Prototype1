@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/iry-cpanel/core/modal/initialize.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/opd/core/modal/initialize.php');
 // Brute force throttling
 
 // IMPORTANT: The session is used for demonstration purposes only.

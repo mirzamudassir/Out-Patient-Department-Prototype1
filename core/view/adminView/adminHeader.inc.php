@@ -1,9 +1,9 @@
 <?php 
 //calling necessary include files
-require_once($_SERVER['DOCUMENT_ROOT'] . '/iry-cpanel/includes/global_info.inc.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/iry-cpanel/core/modal/initialize.php');
-//require_once($_SERVER['DOCUMENT_ROOT'] . '/iry-cpanel/core/view/adminView/adminModals.inc.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/iry-cpanel/core/view/adminView/adminNav.inc.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/opd/includes/global_info.inc.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/opd/core/modal/initialize.php');
+//require_once($_SERVER['DOCUMENT_ROOT'] . '/opd/core/view/adminView/adminModals.inc.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/opd/core/view/adminView/adminNav.inc.php');
 
 //call this method in every private page to protect against unauthorized access
 before_every_protected_page();
