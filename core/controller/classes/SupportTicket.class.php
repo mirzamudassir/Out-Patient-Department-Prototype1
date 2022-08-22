@@ -26,13 +26,13 @@ class SupportTicket{
     //parameters data type is array and can be accessed via key name.
     public function generateSupportTicket($ticketParams){
 
-        //set the ticket attributes
+        //set the ticket attributes and sanitize the inputs
         $this->ticketNumber= $this->generateTicketNumber();
-        $this->ticketFrom= $ticketParams['name'];
-        $this->ticketContact= $ticketParams['contactNumber'];
-        $this->ticketEmail= $ticketParams['email'];
-        $this->ticketTitle= $ticketParams['messageTitle'];
-        $this->ticketQuery= $ticketParams['messageBody'];
+        $this->ticketFrom= sanitizeInput(array("inputDataType" => "STRING", "input" => $ticketParams['name']));
+        $this->ticketContact= sanitizeInput(array("inputDataType" => "INT", "input" => $ticketParams['contactNumber']));
+        $this->ticketEmail= sanitizeInput(array("inputDataType" => "EMAIL", "input" => $ticketParams['email']));
+        $this->ticketTitle= sanitizeInput(array("inputDataType" => "STRING", "input" => $ticketParams['messageTitle']));
+        $this->ticketQuery= sanitizeInput(array("inputDataType" => "STRING", "input" => $ticketParams['messageBody']));
         $this->ticketResponse= 'NULL';
         $this->ticketResponsePostedBy= 'NULL';
         $this->ticketStatus= 'POSTED';
@@ -64,17 +64,16 @@ class SupportTicket{
         
             //run the query
             if($stmt->execute()){
-                return 1;
-            }
-            
-            else{
-                return 0;
+                $result= array("status"=>true, "ticketNumber"=>$this->ticketNumber);
+                return $result;
+            }else{
+                $result= array("status"=>false, "ticketNumber"=>"NULL");
+                return $result;
             }
 
                     //dispose the db connection
                     $link= NULL;
-        
-        
+                    $stmt= NULL;
     }
 
 

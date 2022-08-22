@@ -1,4 +1,4 @@
 <?php
-echo dirname(__FILE__, 2);
+echo dirname(__FILE__);
 
 ?>

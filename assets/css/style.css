@@ -4943,6 +4943,7 @@ table.footable-paging-center > tfoot > tr.footable-paging > td { padding-bottom:
 .social-follower h5 { font-size: 14px; }
 .social-follower .follower-counter { text-align: center; margin-top: 25px; margin-bottom: 25px; font-size: 13px; }
 .social-follower .follower-counter .txt-primary { font-size: 24px; }
+.p-primary-contactus{color: #1abc9c; opacity: 1}
 
 .timeline-icon { height: 45px; width: 45px; display: block; margin: 0 auto; border: 4px #fff solid; }
 
@@ -6838,4 +6839,9 @@ body.menu-bottom .navbar-wrapper { z-index: 1050; }
   font-size: 16px !important;
   font-weight: bold !important;
   
+}
+
+/* custom css by Mudassir Mirza */
+.uname_response{
+  padding-bottom: 50px !important;
 }

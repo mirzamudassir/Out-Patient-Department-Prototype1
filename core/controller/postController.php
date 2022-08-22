@@ -17,14 +17,32 @@ if(isset($_GET['m'])){
             
             $result= $SupportTicket->generateSupportTicket($ticketParams);
 
-            if($result==1){
-                    $arr= array("Success", "Message Sent.");
-                    $_SESSION['notifStatus']= $arr;
-                    redirect_to($appBaseURL . "/systemContactUs"); 
-            }elseif($result==0){
-                    $arr= array("Error", "Message not Sent.");
-                    $_SESSION['notifStatus']= $arr;
-                    redirect_to($appBaseURL . "/systemContactUs"); 
+            if($result['status'] === true){
+                $ticketNumber= $result['ticketNumber'];
+
+                echo json_encode(array('true', 'Message Sent', 'Ticket #: ' . $ticketNumber . '. We will contact you soon.'));
+            }elseif($result['status'] === false){
+                echo json_encode(array('false', 'Message Not Sent', 'Kindly try again later.'));
+            }
+
+            break;
+        
+        case 'signUp':
+            //create the new ticket instance
+            $SupportTicket= new SupportTicket();
+
+            //collect the ticket parameters from the contact us page
+            $ticketParams= array("name" => $_POST['name'], "contactNumber"=>$_POST['contactNumber'], "email"=>$_POST['email'], 
+                           "messageTitle"=>$_POST['messageTitle'], "messageBody"=>$_POST['messageBody']);
+            
+            $result= $SupportTicket->generateSupportTicket($ticketParams);
+
+            if($result['status'] === true){
+                $ticketNumber= $result['ticketNumber'];
+
+                echo json_encode(array('true', 'Message Sent', 'Ticket #: ' . $ticketNumber . '. We will contact you soon.'));
+            }elseif($result['status'] === false){
+                echo json_encode(array('false', 'Message Not Sent', 'Kindly try again later.'));
             }
 
             break;
@@ -32,7 +50,7 @@ if(isset($_GET['m'])){
 
 
         default:
-        echo "ERR_CONTROLLER";
+        echo "ERR_P_CONTROLLER";
 
     }
 

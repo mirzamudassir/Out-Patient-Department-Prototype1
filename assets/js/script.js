@@ -291,9 +291,8 @@ $('.color-picker a.handle').click(function(e) {
     }
 });
 
-$(document).ready(function() { 
-    
-});  
+//custom js by Mudassir Mirza
+
 
 
 
