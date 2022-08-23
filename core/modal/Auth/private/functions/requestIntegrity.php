@@ -6,7 +6,64 @@
  */
 ob_start();
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/opd/core/modal/initialize.php');
+require_once(dirname(__FILE__,4) . "/initialize.php");
+
+
+//public method to check the status of account if active or not
+//return type of this method is string
+function userAccountStatus($params){
+    //get the database connection and environment urls
+    global $link;
+
+    $username= $params['username'];
+
+    //run the query
+    $stmt= $link->prepare("SELECT username, userAccountStatus FROM `opd_user_accounts` WHERE username= :username");
+    $stmt->bindParam(":username", $username, PDO::PARAM_STR);
+    $stmt->execute();
+
+    if($row= $stmt->fetch()){
+        $username= $row['username'];
+        $userAccountStatus= $row['userAccountStatus'];
+
+        return $userAccountStatus;
+    }else{
+        return 'false';
+    }
+
+    //dispose the objects
+    $link= NULL;
+    $stmt= NULL;
+
+}
+
+
+
+//public method to check the status of user IP
+//return type of this method is string
+function userIPStatus($params){
+    //get the database connection and environment urls
+    global $link;
+
+    $ipAddress= $params['ip'];
+
+    //run the query
+    $stmt= $link->prepare("SELECT * FROM `opd_user_accounts` WHERE userIP= :ipAddress");
+    $stmt->bindParam(":ipAddress", $ipAddress, PDO::PARAM_STR);
+    $stmt->execute();
+
+    if($stmt->rowCount() == 1){
+        return "blocked";
+    }else{
+        return 'false';
+    }
+
+    //dispose the objects
+    $link= NULL;
+    $stmt= NULL;
+
+}
+
 
 function isAdminValid($userID){
     global $link;

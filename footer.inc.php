@@ -86,10 +86,10 @@
                             if(response!=='false'){
                                 // Show response
                                 $("#uname_response").html(response);
-                                $("#submit").attr("disabled", true);
+                                $("#signUp").attr("disabled", true);
                             }else if(response == 'false'){
                                 $("#uname_response").html("");
-                                $("#submit").attr("disabled", false);
+                                $("#signUp").attr("disabled", false);
                             }
                         }
                     });
@@ -114,10 +114,10 @@
                             if(response!=='false'){
                                 // Show response
                                 $("#pwd_response").html(response);
-                                $("#submit").attr("disabled", true);
+                                $("#signUp").attr("disabled", true);
                             }else if(response == 'false'){
                                 $("#pwd_response").html("");
-                                $("#submit").attr("disabled", false);
+                                $("#signUp").attr("disabled", false);
                             }
                         }
                     });

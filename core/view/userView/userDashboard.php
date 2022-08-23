@@ -1,6 +1,6 @@
 <?php
 //get header for this page
-require_once('employeeHeader.inc.php');
+require_once('userHeader.inc.php');
 ?>
   <body>
     <!-- Pre-loader start -->
@@ -320,7 +320,7 @@ require_once('employeeHeader.inc.php');
 
 <?php
 //get footer for this page
-require_once('employeeFooter.inc.php');
+require_once('userFooter.inc.php');
 ?>
 </body>
 

@@ -35,10 +35,10 @@ class Patient extends User{
         $this->patientGender= sanitizeInput(array("inputDataType" => "STRING", "input" => $params['gender']));
         $this->patientAge= sanitizeInput(array("inputDataType" => "STRING", "input" => $params['age']));
         $this->patientContactNumber= sanitizeInput(array("inputDataType" => "STRING", "input" => $params['contactNumber']));
-        $this->patientEmail= sanitizeInput(array("inputDataType" => "STRING", "input" => $params['email']));
+        $this->patientEmail= sanitizeInput(array("inputDataType" => "EMAIL", "input" => $params['email']));
         $this->patientAddress= sanitizeInput(array("inputDataType" => "STRING", "input" => $params['address']));
         $this->patientStatus= 'ACTIVE';
-        $this->patientPreMedHistory= sanitizeInput(array("inputDataType" => "STRING", "input" => $params['previousMedicalHistory']));
+        $this->patientPreMedHistory= sanitizeInput(array("inputDataType" => "STRING", "input" => $params['prevMedicalHistory']));
         $this->patientRegisteredBy= 'SELF';
         $this->patientRegisteredAt= date("F j, Y, g:i a");
         $this->patientUpdatedBy= 'NULL';
@@ -73,19 +73,44 @@ class Patient extends User{
            //run the query
            if($stmt->execute()){
 
-                //after the successfull patient registration, user account against the patient will be generated.
-                parent::registerNewUser();
 
-               $result= array("status"=>true, "mrNumber"=>$this->mrNumber);
-               return $result;
+                //after the successfull patient registration, user account against the patient will be generated.
+                //parameters will be collected for the user registration.
+                $registrationNumber= $this->mrNumber;
+                $username= sanitizeInput(array("inputDataType" => "STRING", "input" => $params['username']));
+                $plainTextPassword= $params['password'];
+                $userRole= 'PATIENT';
+                $userAccessLevel= 'USER';
+                $userSecurityQuestion= sanitizeInput(array("inputDataType" => "STRING", "input" => $params['securityQuestion']));
+                $userSecurityAnswer= sanitizeInput(array("inputDataType" => "STRING", "input" => $params['securityAnswer']));
+
+                $userParams= array("registrationNumber"=>$registrationNumber, "username"=>$username, "password"=>$plainTextPassword, "userRole"=>$userRole, "userAccessLevel"=>$userAccessLevel,
+                                    "userSecurityQuestion"=>$userSecurityQuestion, "userSecurityAnswer"=>$userSecurityAnswer);
+
+                //call the method
+                $userAccount= parent::registerNewUser($userParams);
+
+                if($userAccount['status'] == 'false'){
+                    $result= array("status"=>"false", "mrNumber"=>"NULL");
+                    return $result;
+                }elseif($userAccount['status'] == 'true'){
+                    $result= array("status"=>"true", "mrNumber"=>$this->mrNumber);
+                    return $result;
+                }
+
+
+
+               
            }else{
-               $result= array("status"=>false, "mrNumber"=>"NULL");
-               return $result;
+                    $result= array("status"=>false, "mrNumber"=>"NULL");
+                    return $result;
            }
 
                    //dispose the db connection
                    $link= NULL;
                    $stmt= NULL;
+                   $userAccount= NULL;
+
         
         
     }
@@ -103,6 +128,12 @@ class Patient extends User{
         $mrNumber= $year. $month . $day . $time . $salt;
 
         return $mrNumber;
+    }
+
+
+    //method to check the uername availability
+    public function checkUsernameAvailability($username){
+        return Parent::checkUsernameAvailability($username);
     }
 
 }

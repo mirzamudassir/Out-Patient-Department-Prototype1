@@ -16,7 +16,6 @@ require_once(PRIVATE_PATH . "/functions/request_forgery_functions.php");
 require_once(PRIVATE_PATH . "/functions/reset_token_functions.php");
 require_once(PRIVATE_PATH . "/functions/session_hijacking_functions.php");
 require_once(PRIVATE_PATH . "/functions/sqli_escape_functions.php");
-require_once(PRIVATE_PATH . "/functions/validation_functions.php");
 require_once(PRIVATE_PATH . "/functions/xss_sanitize_functions.php");
 require_once(PRIVATE_PATH . "/functions/requestIntegrity.php");
 require_once(PRIVATE_PATH . "/functions/brute_force_throttle_functions.php");
@@ -43,7 +42,7 @@ if($link === "ERR_DB_CONN"){
     $link= $link;
 }
 
-//date_default_timezone_set("Asia/Karachi");
+date_default_timezone_set("Asia/Karachi");
 
 /* $useragent=$_SERVER['HTTP_USER_AGENT'];
 

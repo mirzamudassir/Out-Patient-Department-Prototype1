@@ -11,129 +11,62 @@
 
 
 require_once('../initialize.php');
-if(isset($_POST['login'])){
+function authentication($params){
 
   //getting the instance of Database Connection
   global $link;
 
     // retrieve the values submitted via the form
-    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
-    $pwd = $_POST['password'];
+    $username = sanitizeInput(array("inputDataType" => "STRING", "input" => $params['username']));
+    $pwd = $params['password'];
 
-      $query = $link->prepare("SELECT * FROM `user_accounts` WHERE username=:username");
-      $query->bindParam(":username", $username, PDO::PARAM_STR);
+      $stmt = $link->prepare("SELECT * FROM `opd_user_accounts` WHERE username=:username");
+      $stmt->bindParam(":username", $username, PDO::PARAM_STR);
 
-      if($query->execute()){
-        if($query->rowCount() == 1){
-          if($row= $query->fetch()){
+      if($stmt->execute()){
+        if($stmt->rowCount() == 1){
+          if($row= $stmt->fetch()){
 
             $id= $row['id'];
             $username= $row['username'];
-            $hashed_password= $row['password_hash'];
-            $accessLevel= $row['access_level'];
-            $account_status= $row['account_status'];
-            $fullName= $row['full_name'];
+            $passwordHash= $row['passwordHash'];
+            $userRole= $row['userRole'];
+            $userAccessLevel= $row['userAccessLevel'];
             $IP= $_SERVER['REMOTE_ADDR'];
 
-            //check weather the account is active or not AND IP of the user is not Black Listed
-            if($account_status=== 'ACTIVE'){
-              if(isIPBlackListed($IP) === FALSE AND isRequestFromSameDomain() === TRUE){
-            
-            //validate the password hash
-            if(password_verify($pwd, $hashed_password)){
-              
-                  // successful login
-                  after_successful_login($id, $username, $accessLevel, $fullName);
 
-                  //clear the failed login records if available
-                  clearFailedLogins($username);
-
-                  $_SESSION['notifications'] = "Welcome";
-
-                  redirect_to($dashboardURL);
-              }else{
-                  //here call the count login method to store the failed login attempts counts into the database
-                  if(countFailedLogins($username) === TRUE ){
-                    $_SESSION['message']= "Invalid Credentials";
-                    redirect_to($loginURL);
+              //check the status of account if active or not
+              $accountStatus= userAccountStatus(array("username"=>$username));
+              if($accountStatus === "ACTIVE"){
+                if(password_verify($pwd, $passwordHash)){
+                  afterSuccessfullAuthentication();
+                  redirectTo($dashboardURL);
                 }else{
-
-                  //get the IP of the user
-                  $failedLoginIP= $_SERVER['REMOTE_ADDR'];
-                  //call the method to temporary BLOCK the user account to avoid brute force attack
-                  throttleFailedLogins($failedLoginIP, $username);
-
-                  //set the message in the session to be dispalyed to user
-                  $_SESSION['message']= "Your account is $account_status";
-                  //redirect the user back to login page
-                  redirect_to($loginURL);
-                }//throttle failed login loop end
-
-              }//password verify loop end
-
-            //IP blacklist method loop end
-            }else{
-               
-              //set the message in the session to be dispalyed to user
-              $_SESSION['message']= "Your IP Address is BLOCKED";
-              //redirect the user back to login page
-              redirect_to($loginURL);
-              exit();
-              return false;
-              
-            }
-
-             }else{
-                //check either account status can be renewed to ACTIVE
-                if(shouldAccountReActivate($username) === TRUE){
-
-                  // successful login
-                  after_successful_login($id, $username, $accessLevel, $fullName);
-                  redirect_to($dashboardURL);
-  
-                }else{
-  
-                //redirect_to($appBaseURL . "/sandbox?error=ERR_ACCESS_DENIED::ACCOUNT $account_status::");
-                //set the message in the session to be dispalyed to user
-                $_SESSION['message']= "Your account is $account_status";
-                //redirect the user back to login page
-                redirect_to($loginURL);
-                exit();
-                return false;
+                  echo json_encode(array('false', 'Invalid Credentials', 'Please input your valid credentials to sign in.'));
                 }
-             }
+                
+
+              }else{
+                echo json_encode(array('false', 'Account is ' . $accountStatus . '.', 'Please contact system admin for help.'));
+              }
             
-             }
-           }
-           else{
-              //get the IP of the user
-            $failedLoginIP= $_SERVER['REMOTE_ADDR'];
-
-            //here call the count login method to store the failed IP login attempts counts into the database
-            if(countFailedIPLogins($failedLoginIP) === TRUE ){
-              $_SESSION['message']= "Invalid Credentials";
-              redirect_to($loginURL);
           }else{
-
-            //call the method to temporary BLOCK the IP ADDRESS to avoid brute force attack
-            throttleFailedLoginIPs($failedLoginIP);
-
-            //set the message in the session to be dispalyed to user
-            $_SESSION['message']= "Your IP Address is BLOCKED";
-            //redirect the user back to login page
-            redirect_to($loginURL);
+            echo json_encode(array('false', 'Invalid Credentials', 'Please input your valid credentials to sign in.'));
           }
+
+        }else{
+          echo json_encode(array('false', 'Invalid Credentials', 'Please input your valid credentials to sign in.'));
           }
-         }
+        
 
-    }else{
-      redirect_to($loginURL);
-    }
-      
+      }else{
+          echo json_encode(array('false', 'Invalid Credentials', 'Please input your valid credentials to sign in.'));
+        }
 
-    //dispose off the database connection 
-    $link= NULL;
-  
-    
+
+
+        //dispose off the database connection 
+        $link= NULL;
+}
   
 ?>

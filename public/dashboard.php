@@ -6,6 +6,6 @@ define("PRIVATE", TRUE);
 require_once($_SERVER['DOCUMENT_ROOT'] . '/opd/core/view/renderView.php');
 
 //now call the renderView method and pass the argumetns
-renderView($_SESSION['id'], $_SESSION['accessLevel'], 'Dashboard');
+renderView($_SESSION['username'], $_SESSION['userAccessLevel'], 'Dashboard');
 
 ?>

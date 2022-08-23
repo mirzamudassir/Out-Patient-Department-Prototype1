@@ -103,7 +103,7 @@ function isUserAlreadyLoggedIn() {
 
 
 // Actions to preform after every successful login
-function after_successful_login($id, $username, $accessLevel, $fullName) {
+function after_successful_login($id, $username, $userAccessLevel, $fullName) {
 	// Regenerate session ID to invalidate the old one.
 	// Super important to prevent session hijacking/fixation.
 	

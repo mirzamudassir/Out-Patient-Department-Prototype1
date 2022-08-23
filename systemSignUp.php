@@ -5,7 +5,7 @@ require_once(dirname(__FILE__) . "/header.inc.php");
 
 ?>
 <body class="multi-step-sign-up">
-    <form id="msform" name="signUp" id="signUp" method="POST" action="#" data-url="signUp">
+    <form id="msform" name="signUp" method="POST" action="#" data-url="signUp">
         <!-- progressbar -->
         <ul id="progressbar">
             <li class="active">Personal Details</li>
@@ -42,13 +42,13 @@ require_once(dirname(__FILE__) . "/header.inc.php");
             <h2 class="fs-title">Contact Details</h2>
             <h3 class="fs-subtitle">Little bit about your contact information.</h3>
             <div class="input-group">
-                <input type="email" class="form-control" name="Email" placeholder="Email" autocomplete="off" required />
+                <input type="email" class="form-control" name="email" placeholder="Email" autocomplete="off" required />
             </div>
             <div class="input-group">
                 <input type="text" class="form-control" name="contactNumber" placeholder="Contact #" autocomplete="off" required />
             </div>
             <div class="input-group">
-                <textarea class="form-control" name="medicalHistory"  placeholder="Any previous Medical History?" autocomplete="off" required></textarea>
+                <textarea class="form-control" name="prevMedicalHistory"  placeholder="Any previous Medical History?" autocomplete="off" required></textarea>
             </div>
             <button type="button" name="previous" class="btn btn-inverse btn-outline-inverse previous" value="Previous">Previous</button>
             <button type="button" name="next" class="btn btn-primary next" value="Next">Next</button>
@@ -76,17 +76,17 @@ require_once(dirname(__FILE__) . "/header.inc.php");
                 </select>
             </div>
             <div class="input-group">
-                <input type="text" class="form-control" name="securityAnswer" placeholder="Answer" autocomplete="off" required />
+                <input type="text" class="form-control" name="securityAnswer" placeholder="Security Answer" autocomplete="off" required />
             </div>
             <button type="button" name="previous" class="btn btn-inverse btn-outline-inverse previous" value="Previous">Previous</button>
-            <button type="button" name="submit" id="submit" class="btn btn-primary" value="submit">Submit</button>
+            <button type="submit" name="signUp" id="signUp" class="btn btn-primary">Submit</button>
             <p class="m-t-20">Already have an account? <a href="systemSignIn">Sign in</a></p>
         </fieldset>
     </form>
         <?php require_once(dirname(__FILE__) . "/footer.inc.php"); ?>
     <script>
         $(document).ready(function(){
-            $("#signUp").on('submit', function(e){
+            $("#msform").on('submit', function(e){
                 e.preventDefault();
 
                 let formData= $(this).serialize();
@@ -111,7 +111,7 @@ require_once(dirname(__FILE__) . "/header.inc.php");
                             text: messageBody,
                             //timer: 3000 // 3 seconds
                           });
-                          $("#contactUs")[0].reset();
+                          $("#msform")[0].reset();
                         }else if(messageStatus == 'false'){
                             Swal.fire({
                             
@@ -120,13 +120,16 @@ require_once(dirname(__FILE__) . "/header.inc.php");
                             text: messageBody,
                             //timer: 3000 // 3 seconds
                           });
-                          $("#contactUs")[0].reset();
+                          $("#msform")[0].reset();
                         }
                         
                     },
                 }); 
 
             });
+        });
+
+        
     </script>
 </body>
 </html>
