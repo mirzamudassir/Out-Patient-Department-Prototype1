@@ -86,6 +86,63 @@ require_once(dirname(__FILE__) . "/header.inc.php");
         <?php require_once(dirname(__FILE__) . "/footer.inc.php"); ?>
     <script>
         $(document).ready(function(){
+            
+            //check username
+            $("#username").focusout(function(){
+
+                var username = $(this).val().trim();
+
+                if(username != ''){
+
+                    $.ajax({
+                        url: 'core/controller/getController?f=checkUsernameAvailability',
+                        type: 'post',
+                        data: {username:username},
+                        success: function(response){
+                            if(response!=='false'){
+                                // Show response
+                                $("#uname_response").html(response);
+                                $("#signUp").attr("disabled", true);
+                            }else if(response == 'false'){
+                                $("#uname_response").html("");
+                                $("#signUp").attr("disabled", false);
+                            }
+                        }
+                    });
+                }else{
+                        $("#uname_response").html("");
+                }
+
+            });
+
+            //check password
+            $("#password").focusout(function(){
+
+                var password = $(this).val().trim();
+
+                if(password != ''){
+
+                    $.ajax({
+                        url: 'core/controller/getController?f=checkPassword',
+                        type: 'post',
+                        data: {password:password},
+                        success: function(response){
+                            if(response!=='false'){
+                                // Show response
+                                $("#pwd_response").html(response);
+                                $("#signUp").attr("disabled", true);
+                            }else if(response == 'false'){
+                                $("#pwd_response").html("");
+                                $("#signUp").attr("disabled", false);
+                            }
+                        }
+                    });
+                }else{
+                        $("#pwd_response").html("");
+                }
+
+            });
+
             $("#msform").on('submit', function(e){
                 e.preventDefault();
 

@@ -64,10 +64,10 @@ class SupportTicket{
         
             //run the query
             if($stmt->execute()){
-                $result= array("status"=>true, "ticketNumber"=>$this->ticketNumber);
+                $result= array("status"=>"true", "ticketNumber"=>$this->ticketNumber);
                 return $result;
             }else{
-                $result= array("status"=>false, "ticketNumber"=>"NULL");
+                $result= array("status"=>"false", "ticketNumber"=>"NULL");
                 return $result;
             }
 

@@ -10,7 +10,7 @@
 */
 
 
-require_once('../initialize.php');
+require_once(dirname(__FILE__,2) . '/initialize.php');
 function authentication($params){
 
   //getting the instance of Database Connection
@@ -39,8 +39,9 @@ function authentication($params){
               $accountStatus= userAccountStatus(array("username"=>$username));
               if($accountStatus === "ACTIVE"){
                 if(password_verify($pwd, $passwordHash)){
-                  afterSuccessfullAuthentication();
-                  redirectTo($dashboardURL);
+                  $params= array("username"=>$username, "userAccessLevel"=>$userAccessLevel, "userRole"=>$userRole);
+                  afterSuccessfullAuthentication($params);
+                  return "true";
                 }else{
                   echo json_encode(array('false', 'Invalid Credentials', 'Please input your valid credentials to sign in.'));
                 }

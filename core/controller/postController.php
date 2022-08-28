@@ -18,12 +18,12 @@ if(isset($_GET['m'])){
             
             $result= $SupportTicket->generateSupportTicket($ticketParams);
 
-            if($result['status'] === true){
+            if($result['status'] === "true"){
                 $ticketNumber= $result['ticketNumber'];
 
-                echo json_encode(array('true', 'Message Sent', 'Ticket #: ' . $ticketNumber . '. We will contact you soon.'));
-            }elseif($result['status'] === false){
-                echo json_encode(array('false', 'Message Not Sent', 'Kindly try again later.'));
+                echo json_encode(array("true", "Message Sent", "Ticket #: " . $ticketNumber . ". We will contact you soon."));
+            }elseif($result['status'] === "false"){
+                echo json_encode(array("false", "Message Not Sent", "Kindly try again later."));
             }
 
             //dispose the objects
@@ -108,7 +108,10 @@ if(isset($_GET['m'])){
             }else{
     
                 $signInParams= array("username" => $username, "password"=>$password);
-                echo authentication($signInParams);
+                $result= authentication($signInParams);
+                if($result == "true"){
+                    echo json_encode(array('true', '"http://localhost/iry-cpanel"', ''));
+                }
             }
 
 

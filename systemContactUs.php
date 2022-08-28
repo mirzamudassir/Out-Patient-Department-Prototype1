@@ -75,5 +75,52 @@ require_once(dirname(__FILE__) . "/header.inc.php");
     </section>
     <?php require_once(dirname(__FILE__) . "/footer.inc.php"); ?>
 
+    <script>
+        $(document).ready(function(){
+            $("#contactUs").on('submit', function(e){
+                e.preventDefault();
+
+                let formData= $(this).serialize();
+                let formType= $(this).attr('method');
+                let url= $(this).attr('data-url');
+
+                $.ajax({
+                    url: 'core/controller/postController?m=' + url,
+                    type: formType,
+                    data: formData,
+                    success: function(res){
+                        let data= JSON.parse(res);
+                        let messageStatus= data[0];
+                        let messageTitle= data[1];
+                        let messageBody= data[2];
+
+                        if(messageStatus == 'true'){
+                            Swal.fire({
+                            
+                            icon: 'success',
+                            title: messageTitle,
+                            text: messageBody,
+                            //timer: 3000 // 3 seconds
+                          });
+                          $("#contactUs")[0].reset();
+                        }else if(data[0] == 'false'){
+                            Swal.fire({
+                            
+                            icon: 'error',
+                            title: messageTitle,
+                            text: messageBody,
+                            //timer: 3000 // 3 seconds
+                          });
+                          $("#contactUs")[0].reset();
+                        }
+                        
+                    },
+                }); 
+
+            });
+            
+        });
+    </script>
+
 </body>
 </html>

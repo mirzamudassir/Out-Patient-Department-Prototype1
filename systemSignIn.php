@@ -100,8 +100,8 @@ require_once(dirname(__FILE__) . "/header.inc.php");
                             //timer: 3000 // 3 seconds
                           });
                           $("#signIn")[0].reset();
-                        }else{
-                            alert('else');
+                        }else if(messageStatus == 'true'){
+                            $(location).prop('href', messageStatus)
                         }
                         
                     },
