@@ -32,24 +32,18 @@ function renderView($username, $userAccessLevel, $callBackURL){
 
 
         case 'ADMIN':
+            $params= array("username"=>$username, "userAccessLevel"=>"ADMIN");
+            if(authorization($params) === 'true'){
 
-            /* if(authorization($userID) === TRUE){
-                
                 //$sessID= session_id() . $sessSalt;
-                include "$rootAdrr/opd/core/view/adminView/admin$callBackURL.inc.php";
-
+                include "$rootAdrr/opd/core/view/adminView/admin$callBackURL.php";
             }else{
-                header("Location: $sandboxURL?error=ERR_ACCESS_DENIED");
-                session_unset();
-                session_destroy();
-                exit();
-                return false;
-            } */
                 redirectTo($signInURL);
                 session_unset();
                 session_destroy();
                 exit();
                 return false;
+            }
 
             break;
 

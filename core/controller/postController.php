@@ -110,9 +110,9 @@ if(isset($_GET['m'])){
                 $signInParams= array("username" => $username, "password"=>$password);
                 $result= authentication($signInParams);
                 if($result == "true"){
-                    echo json_encode(array('true', 'http://opd.mudassirmirza.me/opd/public/dashboard', ''));
+                    echo json_encode(array('true', 'localhost/opd/public/dashboard', ''));
                 }elseif ($result == "false"){
-                    echo json_encode(array('false', 'http://opd.mudassirmirza.me/opd', ''));
+                    echo json_encode(array('false', 'localhost/opd', ''));
                 }
             }
 
