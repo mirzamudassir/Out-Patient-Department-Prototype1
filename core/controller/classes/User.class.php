@@ -127,6 +127,49 @@ class User{
       $hashString= password_hash($plainText, PASSWORD_DEFAULT);
       return $hashString;
     }
+
+
+    //this method will return user profile
+    public function userProfile($username){
+      //getting the instance of Database Connection
+      global $link;
+
+      //execute the query
+      $stmt= $link->prepare("SELECT registrationNumber, userRole FROM `opd_user_accounts` WHERE username=:username");
+      $stmt->bindParam(":username", $username, PDO::PARAM_STR);
+      $stmt->execute();
+
+      if($stmt->rowCount() > 0){
+        while($row= $stmt->fetch()){
+          $registrationNumber= $row['registrationNumber'];
+          $userRole= $row['userRole'];
+        }
+
+
+
+          //execute the query
+          $stmt= $link->prepare("SELECT * FROM `opd_patients` WHERE mrNumber=:mrNumber");
+          $stmt->bindParam(":mrNumber", $registrationNumber, PDO::PARAM_STR);
+          $stmt->execute();
+
+          while($row= $stmt->fetch()){
+            $patientFullName= $row['patientFullName'];
+
+          }
+
+          $result= array("userFullName"=>$patientFullName, "userRole"=>$userRole);
+
+          return $result;
+      }else{
+        return array("NULL");
+      }
+
+      
+      //dispose the objects
+      $stmt= NULL;
+      $link= NULL;
+    }
+
     
 }
 

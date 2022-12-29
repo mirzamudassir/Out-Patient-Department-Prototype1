@@ -24,7 +24,7 @@ function authentication($params){
       $stmt->bindParam(":username", $username, PDO::PARAM_STR);
 
       if($stmt->execute()){
-        if($stmt->rowCount() == 1){
+        if($stmt->rowCount()>0){
           if($row= $stmt->fetch()){
 
             $id= $row['id'];
@@ -43,7 +43,7 @@ function authentication($params){
                   afterSuccessfullAuthentication($params);
                   return "true";
                 }else{
-                  echo json_encode(array('false', 'Invalid Credentials', 'Please input your valid credentials to sign in.'));
+                  echo json_encode(array('false', 'Invalid Credentials', 'Please provide your valid credentials to sign in.'));
                 }
                 
 
@@ -52,16 +52,16 @@ function authentication($params){
               }
             
           }else{
-            echo json_encode(array('false', 'Invalid Credentials', 'Please input your valid credentials to sign in.'));
+            echo json_encode(array('false', 'Invalid Credentials', 'Please provide your valid credentials to sign in.'));
           }
 
         }else{
-          echo json_encode(array('false', 'Invalid Credentials', 'Please input your valid credentials to sign in.'));
+          echo json_encode(array('false', 'Invalid Credentials', 'Please provide your valid credentials to sign in.'));
           }
         
 
       }else{
-          echo json_encode(array('false', 'Invalid Credentials', 'Please input your valid credentials to sign in.'));
+          echo json_encode(array('false', 'Invalid Credentials', 'Please provide your valid credentials to sign in.'));
         }
 
 

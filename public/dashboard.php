@@ -6,6 +6,9 @@ define("PRIVATE", TRUE);
 require_once($_SERVER['DOCUMENT_ROOT'] . '/opd/core/view/renderView.php');
 
 //now call the renderView method and pass the argumetns
-renderView($_SESSION['username'], $_SESSION['userAccessLevel'], 'Dashboard');
-
+if($_SESSION['username'] !== NULL){
+    renderView($_SESSION['username'], $_SESSION['userAccessLevel'], 'Dashboard');
+}else{
+    header("Location: ../index");
+}
 ?>

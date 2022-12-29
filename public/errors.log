@@ -1,0 +1,12 @@
+[04-Sep-2022 23:47:54 America/New_York] PHP Warning:  require_once(/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php): failed to open stream: No such file or directory in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:47:54 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:47:59 America/New_York] PHP Warning:  require_once(/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php): failed to open stream: No such file or directory in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:47:59 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[05-Sep-2022 09:26:48 Asia/Karachi] PHP Notice:  Undefined index: username in /home/emerhqvq/opd.mudassirmirza.me/opd/public/dashboard.php on line 9
+[20-Sep-2022 17:19:06 Asia/Karachi] PHP Notice:  Undefined index: username in /home/emerhqvq/opd.mudassirmirza.me/opd/public/dashboard.php on line 9
+[09-Oct-2022 12:39:54 Asia/Karachi] PHP Warning:  Undefined array key "username" in /home/emerhqvq/opd.mudassirmirza.me/opd/public/dashboard.php on line 9
+[09-Oct-2022 12:46:06 Asia/Karachi] PHP Warning:  Undefined array key "username" in /home/emerhqvq/opd.mudassirmirza.me/opd/public/dashboard.php on line 9
+[09-Oct-2022 12:46:06 Asia/Karachi] PHP Warning:  Undefined array key "username" in /home/emerhqvq/opd.mudassirmirza.me/opd/public/dashboard.php on line 9
+[09-Oct-2022 12:46:08 Asia/Karachi] PHP Warning:  Undefined array key "username" in /home/emerhqvq/opd.mudassirmirza.me/opd/public/dashboard.php on line 9
+[09-Oct-2022 12:49:36 Asia/Karachi] PHP Warning:  Undefined array key "username" in /home/emerhqvq/opd.mudassirmirza.me/opd/public/dashboard.php on line 9
+[14-Oct-2022 16:45:15 Asia/Karachi] PHP Notice:  Undefined index: username in /home/emerhqvq/opd.mudassirmirza.me/opd/public/dashboard.php on line 9

@@ -2,7 +2,6 @@
 //get the file that includes the basic information about the application like application name, verison, header info, footer info,
 require_once($_SERVER['DOCUMENT_ROOT'] . '/opd/includes/global_info.inc.php');
 require_once(dirname(__FILE__) . "/header.inc.php");
-
 ?>
 <body class="fix-menu">
 <!-- Pre-loader start -->
@@ -44,22 +43,27 @@ require_once(dirname(__FILE__) . "/header.inc.php");
                                         
                                     </div>
                                     <div class="col-sm-5 col-xs-12 forgot-phone text-right">
-                                        <a href="systemResetPassword" class="text-right f-w-600 text-inverse"> Forgot Password?</a>
+                                        <a href="#" class="text-right f-w-600 text-inverse"> Forgot Password?</a>
                                     </div>
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
                                         <button type="submit" name="signIn" id="signIn" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign in</button>
                                     </div>
-                                    <div class="col-md-12">
-                                            <p class="text-inverse m-t-25 text-center">Don't have an account? <a href="systemSignUp"> Sign Up </a> here for free!<br>
-                                            Need any help? <a href="systemContactUs">Contact Us</a></p>
+                                    </form>
+                                    <div class="col-6">
+                                        <a class="btn-a" href="systemSignUp"><button type="button" class="btn btn-inverse btn-sm btn-block waves-effect text-center m-b-20">Sign Up</button></a>
+                                                                                  
+                                    </div>
+                                    <div class="col-6">
+                                        <a class="btn-a" href="systemContactUs"><button type="button" class="btn btn-inverse btn-sm btn-block waves-effect text-center m-b-20">Contact Us</button></a>
+                                                                                  
                                     </div>
                                 </div>
                                 <hr/>
 
                             </div>
-                        </form>
+                        
                         <!-- end of form -->
                     </div>
                     <!-- Authentication card end -->
@@ -82,7 +86,7 @@ require_once(dirname(__FILE__) . "/header.inc.php");
                 let url= $(this).attr('data-url');
 
                 $.ajax({
-                    url: 'core/controller/postController?m=' + url,
+                    url: 'core/controller/postController?m=signIn',
                     type: formType,
                     data: formData,
                     success: function(res){
@@ -91,7 +95,9 @@ require_once(dirname(__FILE__) . "/header.inc.php");
                         let messageTitle= data[1];
                         let messageBody= data[2];
 
-                        if(messageStatus == 'false'){
+                        if(messageStatus == 'true'){
+                            window.location.replace(messageTitle);
+                        }else if(messageStatus == 'false'){
                             Swal.fire({
                             
                             icon: 'error',
@@ -99,9 +105,6 @@ require_once(dirname(__FILE__) . "/header.inc.php");
                             text: messageBody,
                             //timer: 3000 // 3 seconds
                           });
-                          $("#signIn")[0].reset();
-                        }else if(messageStatus == 'true'){
-                            $(location).prop('href', messageStatus)
                         }
                         
                     },

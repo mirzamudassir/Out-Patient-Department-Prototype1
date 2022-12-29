@@ -59,7 +59,7 @@ require_once(dirname(__FILE__) . "/header.inc.php");
             <h2 class="fs-title">Profile Details</h2>
             <h3 class="fs-subtitle">And something about your profile!</h3>
             <div class="input-group">
-                <input type="text" class="form-control" name="username" id="username" placeholder="Username" autocomplete="off" required/>
+                <input type="text" class="form-control" name="username" id="username" placeholder="Username" autocomplete="off" required>
             </div>
             <span class="uname_response" id="uname_response"></span>
             <div class="input-group">
@@ -76,7 +76,7 @@ require_once(dirname(__FILE__) . "/header.inc.php");
                 </select>
             </div>
             <div class="input-group">
-                <input type="text" class="form-control" name="securityAnswer" placeholder="Security Answer" autocomplete="off" required />
+                <input type="text" class="form-control" name="securityAnswer" placeholder="Security Answer" autocomplete="off" required>
             </div>
             <button type="button" name="previous" class="btn btn-inverse btn-outline-inverse previous" value="Previous">Previous</button>
             <button type="submit" name="signUp" id="signUp" class="btn btn-primary">Submit</button>

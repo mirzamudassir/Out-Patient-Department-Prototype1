@@ -1,0 +1,122 @@
+[04-Sep-2022 22:37:26 America/New_York] PHP Notice:  Undefined variable: sandboxURL in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/Auth/Db.php on line 19
+[05-Sep-2022 07:37:26 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on string in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php:48
+Stack trace:
+#0 /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php(19): SupportTicket->generateSupportTicket(Array)
+#1 {main}
+  thrown in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php on line 48
+[04-Sep-2022 22:37:54 America/New_York] PHP Notice:  Undefined variable: sandboxURL in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/Auth/Db.php on line 19
+[05-Sep-2022 07:37:54 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on string in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php:48
+Stack trace:
+#0 /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php(19): SupportTicket->generateSupportTicket(Array)
+#1 {main}
+  thrown in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php on line 48
+[04-Sep-2022 22:39:47 America/New_York] PHP Notice:  Undefined variable: sandboxURL in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/Auth/Db.php on line 19
+[05-Sep-2022 07:39:47 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on string in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php:48
+Stack trace:
+#0 /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php(19): SupportTicket->generateSupportTicket(Array)
+#1 {main}
+  thrown in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php on line 48
+[04-Sep-2022 22:43:22 America/New_York] PHP Warning:  require_once(/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php): failed to open stream: No such file or directory in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 22:43:22 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 22:43:23 America/New_York] PHP Warning:  require_once(/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php): failed to open stream: No such file or directory in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 22:43:23 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 22:43:29 America/New_York] PHP Warning:  require_once(/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php): failed to open stream: No such file or directory in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 22:43:29 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:35:05 America/New_York] PHP Warning:  require_once(/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php): failed to open stream: No such file or directory in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:35:05 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:35:07 America/New_York] PHP Warning:  require_once(/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php): failed to open stream: No such file or directory in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:35:07 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:35:07 America/New_York] PHP Warning:  require_once(/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php): failed to open stream: No such file or directory in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:35:07 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:38:00 America/New_York] PHP Warning:  require_once(/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php): failed to open stream: No such file or directory in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:38:00 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:38:56 America/New_York] PHP Warning:  require_once(/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php): failed to open stream: No such file or directory in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:38:56 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:43:44 America/New_York] PHP Warning:  require_once(/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php): failed to open stream: No such file or directory in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:43:44 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:45:33 America/New_York] PHP Warning:  require_once(/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php): failed to open stream: No such file or directory in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:45:33 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:46:38 America/New_York] PHP Warning:  require_once(/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php): failed to open stream: No such file or directory in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:46:38 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:49:09 America/New_York] PHP Warning:  require_once(/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php): failed to open stream: No such file or directory in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:49:09 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/emerhqvq/opd.mudassirmirza.me/opd/core/opd/modal/Auth/private/functions/blacklist_functions.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 11
+[04-Sep-2022 23:54:05 America/New_York] PHP Notice:  Undefined variable: sandboxURL in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/Auth/Db.php on line 19
+[05-Sep-2022 08:54:05 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on string in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php:48
+Stack trace:
+#0 /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php(19): SupportTicket->generateSupportTicket(Array)
+#1 {main}
+  thrown in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php on line 48
+[04-Sep-2022 23:55:47 America/New_York] PHP Notice:  Undefined variable: sandboxURL in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/Auth/Db.php on line 19
+[05-Sep-2022 08:55:47 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on string in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php:48
+Stack trace:
+#0 /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php(19): SupportTicket->generateSupportTicket(Array)
+#1 {main}
+  thrown in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php on line 48
+[05-Sep-2022 08:58:30 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on string in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php:48
+Stack trace:
+#0 /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php(19): SupportTicket->generateSupportTicket(Array)
+#1 {main}
+  thrown in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php on line 48
+[04-Sep-2022 23:59:53 America/New_York] PHP Notice:  Undefined variable: sandboxURL in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/Auth/Db.php on line 21
+[05-Sep-2022 08:59:53 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on string in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php:48
+Stack trace:
+#0 /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php(19): SupportTicket->generateSupportTicket(Array)
+#1 {main}
+  thrown in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php on line 48
+[05-Sep-2022 00:01:55 America/New_York] PHP Notice:  Undefined variable: sandboxURL in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/Auth/Db.php on line 21
+[05-Sep-2022 09:01:55 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on string in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php:48
+Stack trace:
+#0 /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php(19): SupportTicket->generateSupportTicket(Array)
+#1 {main}
+  thrown in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php on line 48
+[05-Sep-2022 00:02:10 America/New_York] PHP Notice:  Undefined variable: sandboxURL in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/Auth/Db.php on line 21
+[05-Sep-2022 09:02:10 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on string in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php:48
+Stack trace:
+#0 /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php(19): SupportTicket->generateSupportTicket(Array)
+#1 {main}
+  thrown in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php on line 48
+[05-Sep-2022 09:02:42 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on string in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php:48
+Stack trace:
+#0 /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php(19): SupportTicket->generateSupportTicket(Array)
+#1 {main}
+  thrown in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php on line 48
+[05-Sep-2022 09:05:33 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on string in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php:49
+Stack trace:
+#0 /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php(19): SupportTicket->generateSupportTicket(Array)
+#1 {main}
+  thrown in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php on line 49
+[05-Sep-2022 09:05:56 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on string in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php:49
+Stack trace:
+#0 /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php(19): SupportTicket->generateSupportTicket(Array)
+#1 {main}
+  thrown in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php on line 49
+[05-Sep-2022 09:06:40 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on string in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php:48
+Stack trace:
+#0 /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php(19): SupportTicket->generateSupportTicket(Array)
+#1 {main}
+  thrown in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php on line 48
+[05-Sep-2022 00:11:29 America/New_York] PHP Fatal error:  Uncaught Error: Call to private Db::__construct() from invalid context in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php:32
+Stack trace:
+#0 /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php(2): require_once()
+#1 {main}
+  thrown in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 32
+[05-Sep-2022 00:11:31 America/New_York] PHP Fatal error:  Uncaught Error: Call to private Db::__construct() from invalid context in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php:32
+Stack trace:
+#0 /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php(2): require_once()
+#1 {main}
+  thrown in /home/emerhqvq/opd.mudassirmirza.me/opd/core/modal/initialize.php on line 32
+[05-Sep-2022 09:11:49 Asia/Karachi] PHP Notice:  Undefined index: name in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php on line 16
+[05-Sep-2022 09:11:49 Asia/Karachi] PHP Notice:  Undefined index: contactNumber in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php on line 16
+[05-Sep-2022 09:11:49 Asia/Karachi] PHP Notice:  Undefined index: email in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php on line 16
+[05-Sep-2022 09:11:49 Asia/Karachi] PHP Notice:  Undefined index: messageTitle in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php on line 17
+[05-Sep-2022 09:11:49 Asia/Karachi] PHP Notice:  Undefined index: messageBody in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php on line 17
+[05-Sep-2022 09:11:49 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on string in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php:48
+Stack trace:
+#0 /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php(19): SupportTicket->generateSupportTicket(Array)
+#1 {main}
+  thrown in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php on line 48
+[05-Sep-2022 09:12:36 Asia/Karachi] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on string in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php:48
+Stack trace:
+#0 /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/postController.php(19): SupportTicket->generateSupportTicket(Array)
+#1 {main}
+  thrown in /home/emerhqvq/opd.mudassirmirza.me/opd/core/controller/classes/SupportTicket.class.php on line 48

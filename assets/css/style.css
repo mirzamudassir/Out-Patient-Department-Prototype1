@@ -6845,3 +6845,8 @@ body.menu-bottom .navbar-wrapper { z-index: 1050; }
 .uname_response{
   padding-bottom: 50px !important;
 }
+
+.btn-a{
+  color: white;
+  text-decoration: none;
+}

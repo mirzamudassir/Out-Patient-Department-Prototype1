@@ -6,7 +6,6 @@
 <?php 
 //get the file that includes the basic information about the application like application name, verison, header info, footer info,
 require_once($_SERVER['DOCUMENT_ROOT'] . '/opd/includes/global_info.inc.php');
-session_start(); 
 
 ?>
 <!DOCTYPE html>
@@ -21,14 +20,13 @@ session_start();
     <!-- Favicon icon -->
     
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-    <!-- Google font-->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <!-- Required Fremwork -->
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- sweet alert framework -->
     <link rel="stylesheet" type="text/css" href="bower_components/sweetalert/dist/sweetalert2.css">
     <!-- animation nifty modal window effects css -->
     <link rel="stylesheet" type="text/css" href="assets/css/component.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/fonts/openSans.css">
     <!-- themify-icons line icon -->
     <link rel="stylesheet" type="text/css" href="assets/icon/themify-icons/themify-icons.css">
     <!-- ico font -->

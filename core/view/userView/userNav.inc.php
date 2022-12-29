@@ -2,17 +2,61 @@
 //menu code
 $mainMenu= "
                         <!-- NAVIGATION START -->
-                            <div class='pcoded-navigatio-lavel' data-i18n='nav.category.navigation' menu-title-theme='theme5'>Navigation</div>
+                            <div class='pcoded-navigatio-lavel' data-i18n='nav.category.navigation' menu-title-theme='theme5'>HOME</div>
                             <ul class='pcoded-item pcoded-left-item'>
-                            <li class='active'>
+                            <li class='' id='dashboard'>
                                 <a href='dashboard' data-i18n='nav.sample-page.main'>
-                                    <span class='pcoded-micon'><i class='ti-home'></i></span>
+                                    <span class='pcoded-micon'><i class='fa fa-home'></i></span>
                                     <span class='pcoded-mtext'>Dashboard</span>
+                                    <span class='pcoded-mcaret'></span> 
+                                </a>
+                            </li>
+                               
+                            </ul>
+
+                            <div class='pcoded-navigatio-lavel' data-i18n='nav.category.navigation' menu-title-theme='theme5'>Appointments</div>
+                            <ul class='pcoded-item pcoded-left-item'>
+                            <li class=''>
+                                <a href='#' data-i18n='nav.sample-page.main'>
+                                    <span class='pcoded-micon'><i class='fa fa-check-square'></i></span>
+                                    <span class='pcoded-mtext'>Book Appointment</span>
+                                    <span class='pcoded-mcaret'></span>
+                                </a>
+                            </li>
+                            <li class=''>
+                                <a href='#' data-i18n='nav.sample-page.main'>
+                                    <span class='pcoded-micon'><i class='fa fa-calendar-plus-o'></i></span>
+                                    <span class='pcoded-mtext'>View Appointments</span>
                                     <span class='pcoded-mcaret'></span>
                                 </a>
                             </li>
                                
                             </ul>
+
+                            
+                            <div class='pcoded-navigatio-lavel' data-i18n='nav.category.navigation' menu-title-theme='theme5'>Payments</div>
+                            <ul class='pcoded-item pcoded-left-item'>
+                            <li class=''>
+                                <a href='#' data-i18n='nav.sample-page.main'>
+                                    <span class='pcoded-micon'><i class='fa fa-money'></i></span>
+                                    <span class='pcoded-mtext'>Payments History</span>
+                                    <span class='pcoded-mcaret'></span>
+                                </a>
+                            </li>
+                               
+                            </ul>
+
+                            <div class='pcoded-navigatio-lavel' data-i18n='nav.category.navigation' menu-title-theme='theme5' >SETTINGS</div>
+                            <ul class='pcoded-item pcoded-left-item'>
+                                <li class=''>
+                                <a href='#' data-i18n='nav.sample-page.main'>
+                                    <span class='pcoded-micon'><i class='fa fa-cogs'></i></span>
+                                    <span class='pcoded-mtext'>Profile</span>
+                                    <span class='pcoded-mcaret'></span>
+                                </a>
+                            </li>
+                                
+                            </ul> 
                             <!-- NAVIGATION ENDS -->
 
 ";

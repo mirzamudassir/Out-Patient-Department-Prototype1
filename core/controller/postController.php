@@ -103,14 +103,16 @@ if(isset($_GET['m'])){
             $password= $_POST['password'];
 
             if(empty($username) OR empty($password)){
-                echo json_encode(array('false', 'Invalid Credentials', 'Please input your valid credentials to sign in.'));
+                echo json_encode(array('false', 'Invalid Credentials', 'Please provide your valid credentials to sign in.'));
                 exit;
             }else{
     
                 $signInParams= array("username" => $username, "password"=>$password);
                 $result= authentication($signInParams);
                 if($result == "true"){
-                    echo json_encode(array('true', '"http://localhost/iry-cpanel"', ''));
+                    echo json_encode(array('true', 'http://opd.mudassirmirza.me/opd/public/dashboard', ''));
+                }elseif ($result == "false"){
+                    echo json_encode(array('false', 'http://opd.mudassirmirza.me/opd', ''));
                 }
             }
 

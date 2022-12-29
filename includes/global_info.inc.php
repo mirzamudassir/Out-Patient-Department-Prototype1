@@ -9,21 +9,13 @@ $developerName= "Mudassir Mirza";
 $copyrights= "Mudassir Mirza";
 $footer= "$currentYear © $copyrights $version";
 
- function getNotification(){
-    if(isset($_SESSION['notifStatus']) && $_SESSION['notifStatus'] != ''){
-      
-      
-                            ?>
-                          <script>  
-                          alert('Message Sent');
-                      </script>
-<?php
+//necessary definations and configurations here
 
-unset($_SESSION['notifStatus']);
+$signInURL= "http://opd.mudassirmirza.me/opd/systemSignIn";
+$dashboardURL= "http://opd.mudassirmirza.me/opd/public/dashboard";
 
-  
-  }
-}
+$appBaseURL= "http://opd.mudassirmirza.me/opd";
+$sandboxURL= "http://opd.mudassirmirza.me/opd/sandbox";
 
 
 ?>

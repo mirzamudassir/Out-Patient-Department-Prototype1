@@ -149,16 +149,12 @@ function after_successful_logout() {
 // Actions to preform before giving access to any 
 // access-restricted page.
 function before_every_protected_page() {
-	global $loginURL;
+	global $signInURL;
 	
-	if(confirm_session_is_valid() === FALSE){
-
-		$_SESSION['message']= "Invalid Credentials";
-		header("Location: $loginURL");
-	}else{
-		return TRUE;
+	if($_SESSION['username'] === NULL){
+		session_destroy();
+		redirectTo($signInURL);
 	}
-	//isUserAlreadyLoggedIn();
 }
 
 ?>
